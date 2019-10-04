@@ -71,6 +71,7 @@
     <EntitySetMapping Name="Meos">
       <EntityTypeMapping TypeName="CAT_SHOP1Model.Meo">
         <MappingFragment StoreEntitySet="Meo">
+          <ScalarProperty Name="luot_like" ColumnName="luot_like" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="MauSac" ColumnName="MauSac" />
           <ScalarProperty Name="DacDiemNoiBat" ColumnName="DacDiemNoiBat" />

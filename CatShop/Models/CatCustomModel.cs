@@ -18,6 +18,7 @@ namespace CatShop.Models
         public string Ma_PerSon { get; set; }
         public string TenLoaiMeo { get; set; }
         public string giamoi { get; set; }
+        public int luot_like { get; set; }
         public virtual LoaiMeo LoaiMeo { get; set; }
         public virtual Person Person { get; set; }
     }

@@ -32,6 +32,7 @@ namespace CatShop.Models
         public string img { get; set; }
         public string Ma_Loai { get; set; }
         public string Ma_PerSon { get; set; }
+        public Nullable<int> luot_like { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BestCat> BestCats { get; set; }

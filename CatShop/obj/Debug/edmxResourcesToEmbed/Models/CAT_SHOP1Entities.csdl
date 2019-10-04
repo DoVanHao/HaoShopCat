@@ -85,6 +85,7 @@
     <NavigationProperty Name="MaxMonneyCats" Relationship="Self.MaxMoneyCat_Meo" FromRole="Meo" ToRole="MaxMonneyCat" />
     <NavigationProperty Name="Person" Relationship="Self.Meo_PerSon" FromRole="Meo" ToRole="Person" />
     <NavigationProperty Name="SellerCats" Relationship="Self.SellerCat_Meo" FromRole="Meo" ToRole="SellerCat" />
+    <Property Name="luot_like" Type="Int32" />
   </EntityType>
   <EntityType Name="Person">
     <Key>

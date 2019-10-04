@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5e1aefff12b84de592173b638c95e664" Name="Diagram1">
-        <EntityTypeShape EntityType="CAT_SHOP1Model.C_Login" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+      <Diagram DiagramId="5e1aefff12b84de592173b638c95e664" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="CAT_SHOP1Model.C_Login" Width="1.5" PointX="17.875" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CAT_SHOP1Model.BestCat" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CAT_SHOP1Model.Blog" Width="1.5" PointX="7.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CAT_SHOP1Model.CommentBlog" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CAT_SHOP1Model.LastNew" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CAT_SHOP1Model.LoaiMeo" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CAT_SHOP1Model.MaxMonneyCat" Width="1.5" PointX="6.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAT_SHOP1Model.MaxMonneyCat" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CAT_SHOP1Model.Meo" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CAT_SHOP1Model.Person" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CAT_SHOP1Model.SellerCat" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAT_SHOP1Model.SellerCat" Width="1.5" PointX="11.5" PointY="7.125" IsExpanded="true" />
         <AssociationConnector Association="CAT_SHOP1Model.BestCat_Meo" ManuallyRouted="false" />
         <AssociationConnector Association="CAT_SHOP1Model.CMBlog_Blog" ManuallyRouted="false" />
         <AssociationConnector Association="CAT_SHOP1Model.LastNew_Meo" ManuallyRouted="false" />

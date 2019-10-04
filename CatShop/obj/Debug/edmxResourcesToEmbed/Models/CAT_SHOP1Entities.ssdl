@@ -73,6 +73,7 @@
     <Property Name="img" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="Ma_Loai" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Ma_PerSon" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="luot_like" Type="int" />
   </EntityType>
   <EntityType Name="Person">
     <Key>
