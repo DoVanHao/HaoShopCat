@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CAT_SHOP1ModelStoreContainer" CdmEntityContainer="CAT_SHOP1Entities">
+    <EntitySetMapping Name="C_Login">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.C_Login">
+        <MappingFragment StoreEntitySet="_Login">
+          <ScalarProperty Name="Ma_NguoiDung" ColumnName="Ma_NguoiDung" />
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blogs">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="Ma_blog" ColumnName="Ma_blog" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentBlogs">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.CommentBlog">
+        <MappingFragment StoreEntitySet="CommentBlog">
+          <ScalarProperty Name="Ma_Comment" ColumnName="Ma_Comment" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="Ma_blog" ColumnName="Ma_blog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiMeos">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.LoaiMeo">
+        <MappingFragment StoreEntitySet="LoaiMeo">
+          <ScalarProperty Name="Ma_Loai" ColumnName="Ma_Loai" />
+          <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meos">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.Meo">
+        <MappingFragment StoreEntitySet="Meo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+          <ScalarProperty Name="DacDiemNoiBat" ColumnName="DacDiemNoiBat" />
+          <ScalarProperty Name="CanNang" ColumnName="CanNang" />
+          <ScalarProperty Name="Ngaytuoi" ColumnName="Ngaytuoi" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="Ma_Loai" ColumnName="Ma_Loai" />
+          <ScalarProperty Name="Ma_PerSon" ColumnName="Ma_PerSon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="Ma_PerSon" ColumnName="Ma_PerSon" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestCats">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.BestCat">
+        <MappingFragment StoreEntitySet="BestCat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Check_cat" ColumnName="Check_cat" />
+          <ScalarProperty Name="Id1" ColumnName="Id1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LastNews">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.LastNew">
+        <MappingFragment StoreEntitySet="LastNew">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Check_cat" ColumnName="Check_cat" />
+          <ScalarProperty Name="News" ColumnName="News" />
+          <ScalarProperty Name="Id1" ColumnName="Id1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaxMonneyCats">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.MaxMonneyCat">
+        <MappingFragment StoreEntitySet="MaxMonneyCat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Check_cat" ColumnName="Check_cat" />
+          <ScalarProperty Name="Id1" ColumnName="Id1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellerCats">
+      <EntityTypeMapping TypeName="CAT_SHOP1Model.SellerCat">
+        <MappingFragment StoreEntitySet="SellerCat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Check_cat" ColumnName="Check_cat" />
+          <ScalarProperty Name="TiLeGiam" ColumnName="TiLeGiam" />
+          <ScalarProperty Name="Id1" ColumnName="Id1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

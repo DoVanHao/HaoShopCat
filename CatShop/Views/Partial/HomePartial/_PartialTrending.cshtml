@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CatShop.Models.CatCustomModel>
+<script src="~/Content/vendors/jquery/jquery-3.2.1.min.js"></script>
+<link href="~/Content/css/defaultSize.css" rel="stylesheet" />
+
+
+<section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>Popular Item in the market</p>
+          <h2>Trending <span class="section-intro__style">Product</span></h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="card text-center card-product">
+              <div class="card-product__img">
+                <img class="card-img" src="@item.img" alt="anh meo"> 
+                <ul class="card-product__imgOverlay">
+                  <li><button><i class="ti-search"></i></button></li>
+                  <li><button><i class="ti-shopping-cart"></i></button></li>
+                  <li><button><i class="ti-heart"></i></button></li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <p>@item.Ngaytuoi ngày tuổi</p>
+                <h4 class="card-product__title"><a href="single-product.html">@item.TenLoaiMeo</a></h4>
+                <p class="card-product__price">@item.GiaBan</p>
+              </div>
+            </div>
+          </div>
+            }
+          
+        </div>
+      </div>
+
+    </section>

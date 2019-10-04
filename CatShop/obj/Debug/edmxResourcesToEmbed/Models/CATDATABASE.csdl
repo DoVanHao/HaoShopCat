@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CAT_SHOP1Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CAT_SHOP1Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="C_Login" EntityType="CAT_SHOP1Model.C_Login" />
+    <EntitySet Name="Blogs" EntityType="CAT_SHOP1Model.Blog" />
+    <EntitySet Name="CommentBlogs" EntityType="CAT_SHOP1Model.CommentBlog" />
+    <EntitySet Name="LoaiMeos" EntityType="CAT_SHOP1Model.LoaiMeo" />
+    <EntitySet Name="Meos" EntityType="CAT_SHOP1Model.Meo" />
+    <EntitySet Name="People" EntityType="CAT_SHOP1Model.Person" />
+    <AssociationSet Name="CMBlog_Blog" Association="CAT_SHOP1Model.CMBlog_Blog">
+      <End Role="Blog" EntitySet="Blogs" />
+      <End Role="CommentBlog" EntitySet="CommentBlogs" />
+    </AssociationSet>
+    <AssociationSet Name="Meo_LoaiMeo" Association="CAT_SHOP1Model.Meo_LoaiMeo">
+      <End Role="LoaiMeo" EntitySet="LoaiMeos" />
+      <End Role="Meo" EntitySet="Meos" />
+    </AssociationSet>
+    <AssociationSet Name="Meo_PerSon" Association="CAT_SHOP1Model.Meo_PerSon">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Meo" EntitySet="Meos" />
+    </AssociationSet>
+    <EntitySet Name="BestCats" EntityType="CAT_SHOP1Model.BestCat" />
+    <EntitySet Name="LastNews" EntityType="CAT_SHOP1Model.LastNew" />
+    <EntitySet Name="MaxMonneyCats" EntityType="CAT_SHOP1Model.MaxMonneyCat" />
+    <EntitySet Name="SellerCats" EntityType="CAT_SHOP1Model.SellerCat" />
+    <AssociationSet Name="BestCat_Meo" Association="CAT_SHOP1Model.BestCat_Meo">
+      <End Role="Meo" EntitySet="Meos" />
+      <End Role="BestCat" EntitySet="BestCats" />
+    </AssociationSet>
+    <AssociationSet Name="LastNew_Meo" Association="CAT_SHOP1Model.LastNew_Meo">
+      <End Role="Meo" EntitySet="Meos" />
+      <End Role="LastNew" EntitySet="LastNews" />
+    </AssociationSet>
+    <AssociationSet Name="MaxMoneyCat_Meo" Association="CAT_SHOP1Model.MaxMoneyCat_Meo">
+      <End Role="Meo" EntitySet="Meos" />
+      <End Role="MaxMonneyCat" EntitySet="MaxMonneyCats" />
+    </AssociationSet>
+    <AssociationSet Name="SellerCat_Meo" Association="CAT_SHOP1Model.SellerCat_Meo">
+      <End Role="Meo" EntitySet="Meos" />
+      <End Role="SellerCat" EntitySet="SellerCats" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C_Login">
+    <Key>
+      <PropertyRef Name="Ma_NguoiDung" />
+    </Key>
+    <Property Name="Ma_NguoiDung" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="TaiKhoan" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="Ma_blog" />
+    </Key>
+    <Property Name="Ma_blog" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="img" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="ThoiGian" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CommentBlogs" Relationship="CAT_SHOP1Model.CMBlog_Blog" FromRole="Blog" ToRole="CommentBlog" />
+  </EntityType>
+  <EntityType Name="CommentBlog">
+    <Key>
+      <PropertyRef Name="Ma_Comment" />
+    </Key>
+    <Property Name="Ma_Comment" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ThoiGian" Type="DateTime" Precision="3" />
+    <Property Name="Ma_blog" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Blog" Relationship="CAT_SHOP1Model.CMBlog_Blog" FromRole="CommentBlog" ToRole="Blog" />
+  </EntityType>
+  <EntityType Name="LoaiMeo">
+    <Key>
+      <PropertyRef Name="Ma_Loai" />
+    </Key>
+    <Property Name="Ma_Loai" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="TenLoai" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Meos" Relationship="CAT_SHOP1Model.Meo_LoaiMeo" FromRole="LoaiMeo" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="Meo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MauSac" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="DacDiemNoiBat" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CanNang" Type="Double" />
+    <Property Name="Ngaytuoi" Type="Int32" />
+    <Property Name="GiaBan" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="img" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Ma_Loai" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Ma_PerSon" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LoaiMeo" Relationship="CAT_SHOP1Model.Meo_LoaiMeo" FromRole="Meo" ToRole="LoaiMeo" />
+    <NavigationProperty Name="Person" Relationship="CAT_SHOP1Model.Meo_PerSon" FromRole="Meo" ToRole="Person" />
+    <NavigationProperty Name="BestCats" Relationship="CAT_SHOP1Model.BestCat_Meo" FromRole="Meo" ToRole="BestCat" />
+    <NavigationProperty Name="LastNews" Relationship="CAT_SHOP1Model.LastNew_Meo" FromRole="Meo" ToRole="LastNew" />
+    <NavigationProperty Name="MaxMonneyCats" Relationship="CAT_SHOP1Model.MaxMoneyCat_Meo" FromRole="Meo" ToRole="MaxMonneyCat" />
+    <NavigationProperty Name="SellerCats" Relationship="CAT_SHOP1Model.SellerCat_Meo" FromRole="Meo" ToRole="SellerCat" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Ma_PerSon" />
+    </Key>
+    <Property Name="Ma_PerSon" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="SDT" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Meos" Relationship="CAT_SHOP1Model.Meo_PerSon" FromRole="Person" ToRole="Meo" />
+  </EntityType>
+  <Association Name="CMBlog_Blog">
+    <End Role="Blog" Type="CAT_SHOP1Model.Blog" Multiplicity="0..1" />
+    <End Role="CommentBlog" Type="CAT_SHOP1Model.CommentBlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="Ma_blog" />
+      </Principal>
+      <Dependent Role="CommentBlog">
+        <PropertyRef Name="Ma_blog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Meo_LoaiMeo">
+    <End Role="LoaiMeo" Type="CAT_SHOP1Model.LoaiMeo" Multiplicity="1" />
+    <End Role="Meo" Type="CAT_SHOP1Model.Meo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiMeo">
+        <PropertyRef Name="Ma_Loai" />
+      </Principal>
+      <Dependent Role="Meo">
+        <PropertyRef Name="Ma_Loai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Meo_PerSon">
+    <End Role="Person" Type="CAT_SHOP1Model.Person" Multiplicity="1" />
+    <End Role="Meo" Type="CAT_SHOP1Model.Meo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Ma_PerSon" />
+      </Principal>
+      <Dependent Role="Meo">
+        <PropertyRef Name="Ma_PerSon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BestCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Check_cat" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Meo" Relationship="CAT_SHOP1Model.BestCat_Meo" FromRole="BestCat" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="LastNew">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="News" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Check_cat" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Meo" Relationship="CAT_SHOP1Model.LastNew_Meo" FromRole="LastNew" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="MaxMonneyCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Check_cat" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Meo" Relationship="CAT_SHOP1Model.MaxMoneyCat_Meo" FromRole="MaxMonneyCat" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="SellerCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TiLeGiam" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Check_cat" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Meo" Relationship="CAT_SHOP1Model.SellerCat_Meo" FromRole="SellerCat" ToRole="Meo" />
+  </EntityType>
+  <Association Name="BestCat_Meo">
+    <End Type="CAT_SHOP1Model.Meo" Role="Meo" Multiplicity="1" />
+    <End Type="CAT_SHOP1Model.BestCat" Role="BestCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LastNew_Meo">
+    <End Type="CAT_SHOP1Model.Meo" Role="Meo" Multiplicity="1" />
+    <End Type="CAT_SHOP1Model.LastNew" Role="LastNew" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LastNew">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MaxMoneyCat_Meo">
+    <End Type="CAT_SHOP1Model.Meo" Role="Meo" Multiplicity="1" />
+    <End Type="CAT_SHOP1Model.MaxMonneyCat" Role="MaxMonneyCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaxMonneyCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SellerCat_Meo">
+    <End Type="CAT_SHOP1Model.Meo" Role="Meo" Multiplicity="1" />
+    <End Type="CAT_SHOP1Model.SellerCat" Role="SellerCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellerCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

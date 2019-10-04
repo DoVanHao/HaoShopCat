@@ -1,0 +1,58 @@
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\CatShop.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\CatShop.pdb
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\Microsoft.Web.Infrastructure.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\Newtonsoft.Json.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Net.Http.Formatting.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Helpers.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Http.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Http.WebHost.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Mvc.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Razor.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.WebPages.Deployment.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.WebPages.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.WebPages.Razor.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\Newtonsoft.Json.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Net.Http.Formatting.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Helpers.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Http.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Http.WebHost.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Mvc.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.Razor.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.WebPages.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.WebPages.Deployment.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\System.Web.WebPages.Razor.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\obj\Debug\CatShop.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\obj\Debug\CatShop.pdb
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\EntityFramework.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\EntityFramework.SqlServer.dll
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\EntityFramework.xml
+c:\users\nam\documents\visual studio 2012\Projects\CatShop\CatShop\bin\EntityFramework.SqlServer.xml
+D:\github\catshop\CatShop\bin\CatShop.dll
+D:\github\catshop\CatShop\bin\CatShop.pdb
+D:\github\catshop\CatShop\bin\EntityFramework.dll
+D:\github\catshop\CatShop\bin\EntityFramework.SqlServer.dll
+D:\github\catshop\CatShop\bin\Microsoft.Web.Infrastructure.dll
+D:\github\catshop\CatShop\bin\Newtonsoft.Json.dll
+D:\github\catshop\CatShop\bin\System.Net.Http.Formatting.dll
+D:\github\catshop\CatShop\bin\System.Web.Helpers.dll
+D:\github\catshop\CatShop\bin\System.Web.Http.dll
+D:\github\catshop\CatShop\bin\System.Web.Http.WebHost.dll
+D:\github\catshop\CatShop\bin\System.Web.Mvc.dll
+D:\github\catshop\CatShop\bin\System.Web.Razor.dll
+D:\github\catshop\CatShop\bin\System.Web.WebPages.Deployment.dll
+D:\github\catshop\CatShop\bin\System.Web.WebPages.dll
+D:\github\catshop\CatShop\bin\System.Web.WebPages.Razor.dll
+D:\github\catshop\CatShop\bin\EntityFramework.xml
+D:\github\catshop\CatShop\bin\EntityFramework.SqlServer.xml
+D:\github\catshop\CatShop\bin\Newtonsoft.Json.xml
+D:\github\catshop\CatShop\bin\System.Net.Http.Formatting.xml
+D:\github\catshop\CatShop\bin\System.Web.Helpers.xml
+D:\github\catshop\CatShop\bin\System.Web.Http.xml
+D:\github\catshop\CatShop\bin\System.Web.Http.WebHost.xml
+D:\github\catshop\CatShop\bin\System.Web.Mvc.xml
+D:\github\catshop\CatShop\bin\System.Web.Razor.xml
+D:\github\catshop\CatShop\bin\System.Web.WebPages.xml
+D:\github\catshop\CatShop\bin\System.Web.WebPages.Deployment.xml
+D:\github\catshop\CatShop\bin\System.Web.WebPages.Razor.xml
+D:\github\catshop\CatShop\obj\Debug\CatShop.dll
+D:\github\catshop\CatShop\obj\Debug\CatShop.pdb

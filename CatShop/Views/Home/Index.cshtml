@@ -1,0 +1,12 @@
+﻿@model CatShop.Models.MultiCustomModel
+
+@{
+    ViewBag.Title = "Index";
+
+    Layout = "~/Views/_LayoutGeneral.cshtml";
+}
+
+@Html.Partial("~/Views/Partial/HomePartial/_PartialCarouselStart.cshtml",Model.ModelCAT_CarouselStart)
+@Html.Partial("~/Views/Partial/HomePartial/_PartialTrending.cshtml",Model.ModelCAT_Trending)
+@Html.Partial("~/Views/Partial/HomePartial/_PartialBestSeller.cshtml",Model.ModelCAT_BestSeller)
+@Html.Partial("~/Views/Partial/HomePartial/_PartialBlogSection.cshtml",Model.ModelCAT_BlogSection)

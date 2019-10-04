@@ -1,0 +1,59 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" ~/Content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" ~/Content="ie=edge">
+  <title>Aroma Shop - Category</title>
+	<link rel="icon" href="~/Content/img/Fevicon.png" type="image/png">
+  <link rel="stylesheet" href="~/Content/vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="~/Content/vendors/fontawesome/~/Content/css/all.min.css">
+	<link rel="stylesheet" href="~/Content/vendors/themify-icons/themify-icons.css">
+	<link rel="stylesheet" href="~/Content/vendors/linericon/style.css">
+  <link rel="stylesheet" href="~/Content/vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="~/Content/vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="~/Content/vendors/nice-select/nice-select.css">
+  <link rel="stylesheet" href="~/Content/vendors/nouislider/nouislider.min.css">
+
+  <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+<body>
+    @RenderBody();
+  <!--================ Start Header Menu Area =================-->
+	@{Html.RenderPartial("~/Views/Partial/HomePartial/_PartialHeader.cshtml");}
+	<!--================ End Header Menu Area =================-->
+
+	<!-- ================ start banner area ================= -->	
+    @{Html.RenderPartial("~/Views/Partial//ShopPartial/_PartialBanner.cshtml");}
+	<!-- ================ end banner area ================= -->
+
+
+	<!-- ================ category section start ================= -->		
+      @{Html.RenderPartial("~/Views/Partial/ShopPartial/_PartialSectionStart.cshtml");}
+	<!-- ================ category section end ================= -->		  
+
+	<!-- ================ top product area start ================= -->	
+    @{Html.RenderPartial("~/Views/Partial/ShopPartial/_PartialProduct.cshtml");}
+	<!-- ================ top product area end ================= -->		
+
+	<!-- ================ Subscribe section start ================= -->		  
+    @{Html.RenderPartial("~/Views/Partial/HomePartial/_PartialSubcribe.cshtml");}
+	<!-- ================ Subscribe section end ================= -->		  
+  <!--================ Start footer Area  =================-->	
+    @{Html.RenderPartial("~/Views/Partial/HomePartial/_PartialFooter.cshtml");}
+	<!--================ End footer Area  =================-->
+
+
+
+  <script src="~/Content/vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="~/Content/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="~/Content/vendors/skrollr.min.js"></script>
+  <script src="~/Content/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="~/Content/vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="~/Content/vendors/nouislider/nouislider.min.js"></script>
+  <script src="~/Content/vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="~/Content/vendors/mail-script.js"></script>
+  <script src="~/Content/js/main.js"></script>
+</body>
+</html>

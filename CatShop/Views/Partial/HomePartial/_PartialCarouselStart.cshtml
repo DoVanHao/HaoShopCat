@@ -1,0 +1,18 @@
+﻿@model IEnumerable<CatShop.Models.CatCustomModel>
+
+<section class="section-margin mt-0">
+      <div class="owl-carousel owl-theme hero-carousel">
+        @foreach (var item in Model)
+        {
+                    <div class="hero-carousel__slide">
+                  <img src=@item.img alt="" class="img-fluid">
+                  <a href="#" class="hero-carousel__slideOverlay">
+                    <h3>@item.TenLoaiMeo</h3>
+                    <p>@item.GiaBan</p>
+                  </a>
+                </div>
+
+        }
+
+      </div>
+    </section>

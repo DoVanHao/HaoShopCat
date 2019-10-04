@@ -1,0 +1,26 @@
+﻿
+.hero-banner__img .img-fluid {
+    width:400px;
+    height:400px;
+    border:solid yellow 2px;
+    outline:solid rgba(152, 241, 122, 0.7) 5px;
+}
+.card-product__img .card-img {
+    width:330px;
+    height:300px;
+    border:solid yellow 1px;
+    outline:solid pink 1px;
+}
+.card-product__img .img-fluid {
+    width:200px;
+    height:180px;
+    border:solid yellow 1px;
+    outline:solid pink 1px;
+}
+
+.card-blog__img .card-img {
+    width:330px;
+    height:310px;
+    border:solid yellow 1px;
+    outline:solid pink 1px;
+}

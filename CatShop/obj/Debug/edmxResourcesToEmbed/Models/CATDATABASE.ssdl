@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CAT_SHOP1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="_Login">
+    <Key>
+      <PropertyRef Name="Ma_NguoiDung" />
+    </Key>
+    <Property Name="Ma_NguoiDung" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TaiKhoan" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BestCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Check_cat" Type="int" Nullable="false" />
+    <Property Name="Id" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="Ma_blog" />
+    </Key>
+    <Property Name="Ma_blog" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="img" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ThoiGian" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CommentBlog">
+    <Key>
+      <PropertyRef Name="Ma_Comment" />
+    </Key>
+    <Property Name="Ma_Comment" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ThoiGian" Type="datetime" />
+    <Property Name="Ma_blog" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="LastNew">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="News" Type="nvarchar" MaxLength="500" />
+    <Property Name="Check_cat" Type="int" Nullable="false" />
+    <Property Name="Id" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoaiMeo">
+    <Key>
+      <PropertyRef Name="Ma_Loai" />
+    </Key>
+    <Property Name="Ma_Loai" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenLoai" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MaxMonneyCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Check_cat" Type="int" Nullable="false" />
+    <Property Name="Id" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Meo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MauSac" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="DacDiemNoiBat" Type="nvarchar" MaxLength="500" />
+    <Property Name="CanNang" Type="float" />
+    <Property Name="Ngaytuoi" Type="int" />
+    <Property Name="GiaBan" Type="nvarchar" MaxLength="200" />
+    <Property Name="img" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ma_Loai" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Ma_PerSon" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Ma_PerSon" />
+    </Key>
+    <Property Name="Ma_PerSon" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SellerCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TiLeGiam" Type="nvarchar" MaxLength="200" />
+    <Property Name="Check_cat" Type="int" Nullable="false" />
+    <Property Name="Id" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="BestCat_Meo">
+    <End Role="Meo" Type="Self.Meo" Multiplicity="1" />
+    <End Role="BestCat" Type="Self.BestCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CMBlog_Blog">
+    <End Role="Blog" Type="Self.Blog" Multiplicity="0..1" />
+    <End Role="CommentBlog" Type="Self.CommentBlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="Ma_blog" />
+      </Principal>
+      <Dependent Role="CommentBlog">
+        <PropertyRef Name="Ma_blog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LastNew_Meo">
+    <End Role="Meo" Type="Self.Meo" Multiplicity="1" />
+    <End Role="LastNew" Type="Self.LastNew" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LastNew">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MaxMoneyCat_Meo">
+    <End Role="Meo" Type="Self.Meo" Multiplicity="1" />
+    <End Role="MaxMonneyCat" Type="Self.MaxMonneyCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaxMonneyCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Meo_LoaiMeo">
+    <End Role="LoaiMeo" Type="Self.LoaiMeo" Multiplicity="1" />
+    <End Role="Meo" Type="Self.Meo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiMeo">
+        <PropertyRef Name="Ma_Loai" />
+      </Principal>
+      <Dependent Role="Meo">
+        <PropertyRef Name="Ma_Loai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Meo_PerSon">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Meo" Type="Self.Meo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Ma_PerSon" />
+      </Principal>
+      <Dependent Role="Meo">
+        <PropertyRef Name="Ma_PerSon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SellerCat_Meo">
+    <End Role="Meo" Type="Self.Meo" Multiplicity="1" />
+    <End Role="SellerCat" Type="Self.SellerCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellerCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CAT_SHOP1ModelStoreContainer">
+    <EntitySet Name="_Login" EntityType="Self._Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestCat" EntityType="Self.BestCat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentBlog" EntityType="Self.CommentBlog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LastNew" EntityType="Self.LastNew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiMeo" EntityType="Self.LoaiMeo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaxMonneyCat" EntityType="Self.MaxMonneyCat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Meo" EntityType="Self.Meo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SellerCat" EntityType="Self.SellerCat" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="BestCat_Meo" Association="Self.BestCat_Meo">
+      <End Role="Meo" EntitySet="Meo" />
+      <End Role="BestCat" EntitySet="BestCat" />
+    </AssociationSet>
+    <AssociationSet Name="CMBlog_Blog" Association="Self.CMBlog_Blog">
+      <End Role="Blog" EntitySet="Blog" />
+      <End Role="CommentBlog" EntitySet="CommentBlog" />
+    </AssociationSet>
+    <AssociationSet Name="LastNew_Meo" Association="Self.LastNew_Meo">
+      <End Role="Meo" EntitySet="Meo" />
+      <End Role="LastNew" EntitySet="LastNew" />
+    </AssociationSet>
+    <AssociationSet Name="MaxMoneyCat_Meo" Association="Self.MaxMoneyCat_Meo">
+      <End Role="Meo" EntitySet="Meo" />
+      <End Role="MaxMonneyCat" EntitySet="MaxMonneyCat" />
+    </AssociationSet>
+    <AssociationSet Name="Meo_LoaiMeo" Association="Self.Meo_LoaiMeo">
+      <End Role="LoaiMeo" EntitySet="LoaiMeo" />
+      <End Role="Meo" EntitySet="Meo" />
+    </AssociationSet>
+    <AssociationSet Name="Meo_PerSon" Association="Self.Meo_PerSon">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Meo" EntitySet="Meo" />
+    </AssociationSet>
+    <AssociationSet Name="SellerCat_Meo" Association="Self.SellerCat_Meo">
+      <End Role="Meo" EntitySet="Meo" />
+      <End Role="SellerCat" EntitySet="SellerCat" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

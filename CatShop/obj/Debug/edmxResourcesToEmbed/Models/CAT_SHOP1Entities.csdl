@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CAT_SHOP1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C_Login">
+    <Key>
+      <PropertyRef Name="Ma_NguoiDung" />
+    </Key>
+    <Property Name="Ma_NguoiDung" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TaiKhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BestCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Check_cat" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Meo" Relationship="Self.BestCat_Meo" FromRole="BestCat" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="Ma_blog" />
+    </Key>
+    <Property Name="Ma_blog" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="img" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ThoiGian" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CommentBlogs" Relationship="Self.CMBlog_Blog" FromRole="Blog" ToRole="CommentBlog" />
+  </EntityType>
+  <EntityType Name="CommentBlog">
+    <Key>
+      <PropertyRef Name="Ma_Comment" />
+    </Key>
+    <Property Name="Ma_Comment" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoTen" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ThoiGian" Type="DateTime" Precision="3" />
+    <Property Name="Ma_blog" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Blog" Relationship="Self.CMBlog_Blog" FromRole="CommentBlog" ToRole="Blog" />
+  </EntityType>
+  <EntityType Name="LastNew">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="News" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Check_cat" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Meo" Relationship="Self.LastNew_Meo" FromRole="LastNew" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="LoaiMeo">
+    <Key>
+      <PropertyRef Name="Ma_Loai" />
+    </Key>
+    <Property Name="Ma_Loai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenLoai" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Meos" Relationship="Self.Meo_LoaiMeo" FromRole="LoaiMeo" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="MaxMonneyCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Check_cat" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Meo" Relationship="Self.MaxMoneyCat_Meo" FromRole="MaxMonneyCat" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="Meo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MauSac" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DacDiemNoiBat" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CanNang" Type="Double" />
+    <Property Name="Ngaytuoi" Type="Int32" />
+    <Property Name="GiaBan" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ma_Loai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ma_PerSon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BestCats" Relationship="Self.BestCat_Meo" FromRole="Meo" ToRole="BestCat" />
+    <NavigationProperty Name="LastNews" Relationship="Self.LastNew_Meo" FromRole="Meo" ToRole="LastNew" />
+    <NavigationProperty Name="LoaiMeo" Relationship="Self.Meo_LoaiMeo" FromRole="Meo" ToRole="LoaiMeo" />
+    <NavigationProperty Name="MaxMonneyCats" Relationship="Self.MaxMoneyCat_Meo" FromRole="Meo" ToRole="MaxMonneyCat" />
+    <NavigationProperty Name="Person" Relationship="Self.Meo_PerSon" FromRole="Meo" ToRole="Person" />
+    <NavigationProperty Name="SellerCats" Relationship="Self.SellerCat_Meo" FromRole="Meo" ToRole="SellerCat" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Ma_PerSon" />
+    </Key>
+    <Property Name="Ma_PerSon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoTen" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Meos" Relationship="Self.Meo_PerSon" FromRole="Person" ToRole="Meo" />
+  </EntityType>
+  <EntityType Name="SellerCat">
+    <Key>
+      <PropertyRef Name="Id1" />
+    </Key>
+    <Property Name="Id1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TiLeGiam" Type="Int32" />
+    <Property Name="Check_cat" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Meo" Relationship="Self.SellerCat_Meo" FromRole="SellerCat" ToRole="Meo" />
+  </EntityType>
+  <Association Name="BestCat_Meo">
+    <End Role="Meo" Type="Self.Meo" Multiplicity="1" />
+    <End Role="BestCat" Type="Self.BestCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CMBlog_Blog">
+    <End Role="Blog" Type="Self.Blog" Multiplicity="0..1" />
+    <End Role="CommentBlog" Type="Self.CommentBlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="Ma_blog" />
+      </Principal>
+      <Dependent Role="CommentBlog">
+        <PropertyRef Name="Ma_blog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LastNew_Meo">
+    <End Role="Meo" Type="Self.Meo" Multiplicity="1" />
+    <End Role="LastNew" Type="Self.LastNew" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LastNew">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Meo_LoaiMeo">
+    <End Role="LoaiMeo" Type="Self.LoaiMeo" Multiplicity="1" />
+    <End Role="Meo" Type="Self.Meo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiMeo">
+        <PropertyRef Name="Ma_Loai" />
+      </Principal>
+      <Dependent Role="Meo">
+        <PropertyRef Name="Ma_Loai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MaxMoneyCat_Meo">
+    <End Role="Meo" Type="Self.Meo" Multiplicity="1" />
+    <End Role="MaxMonneyCat" Type="Self.MaxMonneyCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaxMonneyCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Meo_PerSon">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Meo" Type="Self.Meo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Ma_PerSon" />
+      </Principal>
+      <Dependent Role="Meo">
+        <PropertyRef Name="Ma_PerSon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SellerCat_Meo">
+    <End Role="Meo" Type="Self.Meo" Multiplicity="1" />
+    <End Role="SellerCat" Type="Self.SellerCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellerCat">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CAT_SHOP1Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C_Login" EntityType="Self.C_Login" />
+    <EntitySet Name="BestCats" EntityType="Self.BestCat" />
+    <EntitySet Name="Blogs" EntityType="Self.Blog" />
+    <EntitySet Name="CommentBlogs" EntityType="Self.CommentBlog" />
+    <EntitySet Name="LastNews" EntityType="Self.LastNew" />
+    <EntitySet Name="LoaiMeos" EntityType="Self.LoaiMeo" />
+    <EntitySet Name="MaxMonneyCats" EntityType="Self.MaxMonneyCat" />
+    <EntitySet Name="Meos" EntityType="Self.Meo" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+    <EntitySet Name="SellerCats" EntityType="Self.SellerCat" />
+    <AssociationSet Name="BestCat_Meo" Association="Self.BestCat_Meo">
+      <End Role="Meo" EntitySet="Meos" />
+      <End Role="BestCat" EntitySet="BestCats" />
+    </AssociationSet>
+    <AssociationSet Name="CMBlog_Blog" Association="Self.CMBlog_Blog">
+      <End Role="Blog" EntitySet="Blogs" />
+      <End Role="CommentBlog" EntitySet="CommentBlogs" />
+    </AssociationSet>
+    <AssociationSet Name="LastNew_Meo" Association="Self.LastNew_Meo">
+      <End Role="Meo" EntitySet="Meos" />
+      <End Role="LastNew" EntitySet="LastNews" />
+    </AssociationSet>
+    <AssociationSet Name="Meo_LoaiMeo" Association="Self.Meo_LoaiMeo">
+      <End Role="LoaiMeo" EntitySet="LoaiMeos" />
+      <End Role="Meo" EntitySet="Meos" />
+    </AssociationSet>
+    <AssociationSet Name="MaxMoneyCat_Meo" Association="Self.MaxMoneyCat_Meo">
+      <End Role="Meo" EntitySet="Meos" />
+      <End Role="MaxMonneyCat" EntitySet="MaxMonneyCats" />
+    </AssociationSet>
+    <AssociationSet Name="Meo_PerSon" Association="Self.Meo_PerSon">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Meo" EntitySet="Meos" />
+    </AssociationSet>
+    <AssociationSet Name="SellerCat_Meo" Association="Self.SellerCat_Meo">
+      <End Role="Meo" EntitySet="Meos" />
+      <End Role="SellerCat" EntitySet="SellerCats" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
