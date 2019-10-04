@@ -112,7 +112,7 @@ namespace CatShop.Controllers
                             id = b.Id,
                             img = b.img,
                             gia=b.GiaBan,
-                            giam = Convert.ToInt32(b.GiaBan) - Convert.ToInt32(b.GiaBan)*a.TiLeGiam
+                            giam = a.TiLeGiam
 
                         }).ToList();
 
@@ -123,7 +123,7 @@ namespace CatShop.Controllers
                     Id = i.id,
                     img = i.img,
                     GiaBan=i.gia,
-                    giamoi=Convert.ToString(i.giam)
+                    giamoi = Convert.ToString(Convert.ToInt32(i.gia) - Convert.ToInt32(i.gia) * i.giam*0.01)
                 });
             }
             return listcats;
