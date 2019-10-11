@@ -114,57 +114,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Function\functionAjax.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BestCat.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\BestCat.cs" />
     <Compile Include="Models\BestCatCustom.cs" />
-    <Compile Include="Models\Blog.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\CatCustomModel.cs" />
-    <Compile Include="Models\CAT_SHOP1Entities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CAT_SHOP1Entities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CAT_SHOP1Entities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CAT_SHOP1Entities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CAT_SHOP1Entities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CommentBlog.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\C_Login.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LastNew.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LoaiMeo.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MaxMonneyCat.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Meo.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\CatDbContext.cs" />
+    <Compile Include="Models\CommentBlog.cs" />
+    <Compile Include="Models\C_Login.cs" />
+    <Compile Include="Models\LastNew.cs" />
+    <Compile Include="Models\LoaiMeo.cs" />
+    <Compile Include="Models\MaxMonneyCat.cs" />
+    <Compile Include="Models\Meo.cs" />
     <Compile Include="Models\MultiCustomModel.cs" />
-    <Compile Include="Models\Person.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SellerCat.cs">
-      <DependentUpon>CAT_SHOP1Entities.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\SellerCat.cs" />
     <Compile Include="Models\TypeOfCat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -391,6 +358,7 @@
     <Content Include="Content\img\r7.jpg" />
     <Content Include="Content\img\r8.jpg" />
     <Content Include="Content\img\r9.jpg" />
+    <Content Include="Content\js\ajax.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\vendors\bootstrap\bootstrap.bundle.min.js" />
     <Content Include="Content\vendors\bootstrap\bootstrap.min.css" />
@@ -879,27 +847,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="Models\CAT_SHOP1Entities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CAT_SHOP1Entities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Models\CAT_SHOP1Entities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CAT_SHOP1Entities.edmx</DependentUpon>
-      <LastGenOutput>CAT_SHOP1Entities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\CAT_SHOP1Entities.edmx.diagram">
-      <DependentUpon>CAT_SHOP1Entities.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\CAT_SHOP1Entities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CAT_SHOP1Entities.edmx</DependentUpon>
-      <LastGenOutput>CAT_SHOP1Entities.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Partial\ShopPartial\_PartialBanner.cshtml" />

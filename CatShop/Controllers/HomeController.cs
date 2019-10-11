@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CatShop.Models;
 using System.Linq;
-
+using CatShop.Function;
 
 namespace CatShop.Controllers
 {
@@ -30,7 +30,7 @@ namespace CatShop.Controllers
         {
             List<CatCustomModel> listcats = new List<CatCustomModel>();
             
-            CAT_SHOP1Entities1 data = new CAT_SHOP1Entities1();
+            CatDbContext data = new CatDbContext();
             var bestcattable = data.BestCats;
             var cattable = data.Meos;
             var typecat=data.LoaiMeos;
@@ -64,7 +64,7 @@ namespace CatShop.Controllers
         public List<CatCustomModel> GetCatTrending()
         {
             List<CatCustomModel> listcats = new List<CatCustomModel>();
-            CAT_SHOP1Entities1 data = new CAT_SHOP1Entities1();
+            CatDbContext data = new CatDbContext();
             var catmaxmoney = data.MaxMonneyCats;
             var cattable = data.Meos;
             var typecat = data.LoaiMeos;
@@ -99,7 +99,7 @@ namespace CatShop.Controllers
         public List<CatCustomModel> GetCatBestSeller()
         {
             List<CatCustomModel> listcats = new List<CatCustomModel>();
-            CAT_SHOP1Entities1 data = new CAT_SHOP1Entities1();
+            CatDbContext data = new CatDbContext();
             var catseller = data.SellerCats;
             var cattable = data.Meos;
             var typecat = data.LoaiMeos;
@@ -123,7 +123,7 @@ namespace CatShop.Controllers
                     Id = i.id,
                     img = i.img,
                     GiaBan=i.gia,
-                    giamoi = Convert.ToString(Convert.ToInt32(i.gia) - Convert.ToInt32(i.gia) * i.giam*0.01)
+                    giamoi = Convert.ToString(Convert.ToInt32(i.gia) - Convert.ToInt32(i.gia) * Convert.ToInt32(i.giam)*0.01)
                 });
             }
             return listcats;
@@ -132,7 +132,7 @@ namespace CatShop.Controllers
         public List<CatCustomModel> GetSellCatBlogSection()
         {
             List<CatCustomModel> listcats = new List<CatCustomModel>();
-            CAT_SHOP1Entities1 data = new CAT_SHOP1Entities1();
+            CatDbContext data = new CatDbContext();
             var cattable = data.LastNews;
             var cattable1 = data.Meos;
             var item = (from a in cattable
@@ -161,6 +161,17 @@ namespace CatShop.Controllers
             return View();
         }
 
+
+
+        public JsonResult GetCatType(string type)
+        {
+
+            CatCustomModel cat = new CatCustomModel();
+
+
+            return Json(functionAjax.GetCatOfType(type), JsonRequestBehavior.AllowGet);
+
+        }
 
     }
 }

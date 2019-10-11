@@ -85,3 +85,4 @@ D:\github\HaoShopCat\CatShop\bin\System.Web.WebPages.Deployment.xml
 D:\github\HaoShopCat\CatShop\bin\System.Web.WebPages.Razor.xml
 D:\github\HaoShopCat\CatShop\obj\Debug\CatShop.dll
 D:\github\HaoShopCat\CatShop\obj\Debug\CatShop.pdb
+D:\github\HaoShopCat\CatShop\obj\Debug\CatShop.csprojResolveAssemblyReference.cache
